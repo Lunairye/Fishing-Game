@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bai4tjcy5qvpb"]
+
+[ext_resource type="PackedScene" uid="uid://bqjvikyltyl1d" path="res://Fishing Rod/fishing_rod.tscn" id="1_b6ro0"]
+
+[node name="Test_Main" type="Node2D"]
+
+[node name="Fishing Rod" parent="." instance=ExtResource("1_b6ro0")]
+position = Vector2(204, 126)

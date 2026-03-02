@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqjvikyltyl1d"]
+
+[ext_resource type="Script" uid="uid://v3w5jf7q3mfr" path="res://Fishing Rod/fishing_rod_manager.gd" id="1_1tjrd"]
+[ext_resource type="Texture2D" uid="uid://bjwoheegicodq" path="res://Art Assets/Fishing Hook.png" id="1_3y1ma"]
+[ext_resource type="Texture2D" uid="uid://dmht8b3wc8xvv" path="res://Art Assets/Fishing Rod.png" id="1_x0c03"]
+[ext_resource type="Script" uid="uid://5o20m34616ft" path="res://Fishing Rod/fishing_hook_manager.gd" id="3_pyqmv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_52v63"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3y1ma"]
+radius = 8.0
+
+[node name="Fishing Rod" type="Node2D"]
+script = ExtResource("1_1tjrd")
+
+[node name="Fishing Rod Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_x0c03")
+
+[node name="Fishing Hook" type="RigidBody2D" parent="."]
+position = Vector2(7, 1)
+mass = 0.1
+script = ExtResource("3_pyqmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fishing Hook"]
+shape = SubResource("CircleShape2D_52v63")
+
+[node name="Sprite2D" type="Sprite2D" parent="Fishing Hook"]
+texture = ExtResource("1_3y1ma")
+
+[node name="Area2D" type="Area2D" parent="Fishing Hook"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fishing Hook/Area2D"]
+shape = SubResource("CircleShape2D_3y1ma")
+
+[node name="Camera2D" type="Camera2D" parent="Fishing Hook"]
+zoom = Vector2(4, 4)
+
+[node name="Fishing Hook Current Mark" type="Marker2D" parent="Fishing Hook"]
+position = Vector2(-1, -2)
+
+[node name="Fishing Line" type="Line2D" parent="."]
+width = 1.0
+
+[node name="Fishing Hook Reeled Marker" type="Marker2D" parent="."]
+position = Vector2(6, -8)
