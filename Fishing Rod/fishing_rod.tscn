@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bqjvikyltyl1d"]
 
 [ext_resource type="Script" uid="uid://v3w5jf7q3mfr" path="res://Fishing Rod/fishing_rod_manager.gd" id="1_1tjrd"]
-[ext_resource type="Texture2D" uid="uid://bjwoheegicodq" path="res://Art Assets/Fishing Hook.png" id="1_3y1ma"]
-[ext_resource type="Texture2D" uid="uid://dmht8b3wc8xvv" path="res://Art Assets/Fishing Rod.png" id="1_x0c03"]
+[ext_resource type="Texture2D" uid="uid://bjwoheegicodq" path="res://Art Assets/Fishing Equipment/Fishing Rod Equipment/Fishing Hook.png" id="1_3y1ma"]
+[ext_resource type="Texture2D" uid="uid://dmht8b3wc8xvv" path="res://Art Assets/Fishing Equipment/Fishing Rod Equipment/Fishing Rod.png" id="1_x0c03"]
 [ext_resource type="Script" uid="uid://5o20m34616ft" path="res://Fishing Rod/fishing_hook_manager.gd" id="3_pyqmv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52v63"]
-radius = 4.0
+radius = 2.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3y1ma"]
 radius = 8.0
@@ -18,19 +18,19 @@ script = ExtResource("1_1tjrd")
 texture = ExtResource("1_x0c03")
 
 [node name="Fishing Hook" type="RigidBody2D" parent="." unique_id=1026160145]
-position = Vector2(6.5, 1)
+position = Vector2(6.5, -8)
 mass = 0.1
 lock_rotation = true
 script = ExtResource("3_pyqmv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fishing Hook" unique_id=128979161]
+[node name="Physical collision" type="CollisionShape2D" parent="Fishing Hook" unique_id=128979161]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_52v63")
 
-[node name="Area2D" type="Area2D" parent="Fishing Hook" unique_id=1006105428]
+[node name="Collection Zone" type="Area2D" parent="Fishing Hook" unique_id=1006105428]
 position = Vector2(0, 3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fishing Hook/Area2D" unique_id=1279664797]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fishing Hook/Collection Zone" unique_id=1279664797]
 shape = SubResource("CircleShape2D_3y1ma")
 
 [node name="Camera2D" type="Camera2D" parent="Fishing Hook" unique_id=1803639443]
@@ -43,6 +43,11 @@ texture = ExtResource("1_3y1ma")
 
 [node name="Fishing Hook Current Mark" type="Marker2D" parent="Fishing Hook/Hook Sprite" unique_id=1168563039]
 position = Vector2(-0.5, -2)
+
+[node name="Line2D" type="Line2D" parent="Fishing Hook" unique_id=1412493245]
+visible = false
+points = PackedVector2Array(0, 0, 0, 0)
+width = 1.0
 
 [node name="Fishing Line" type="Line2D" parent="." unique_id=967680618]
 z_index = -1
