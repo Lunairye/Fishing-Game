@@ -2,8 +2,8 @@ extends Node2D
 
 var starting_power = 10
 var power = starting_power
-var power_max = 50
-var power_scale_amount = 10
+var power_max = 25
+var power_scale_amount = 5
 var power_scale_speed = 1
 
 var charging = true
