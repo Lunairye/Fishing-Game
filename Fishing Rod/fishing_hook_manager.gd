@@ -6,18 +6,15 @@ var thrown = "thrown"
 var sinking = "sinking"
 var reeling = "reeling"
 
-var reel_force
-
 var launch_angle = PI/6
+var line_length = 100
+
 var launch_vector = Vector2.ZERO
 var travel_vector = Vector2.ZERO
-
-var line_length = 100
+var hook_to_centre = Vector2.ZERO
 
 @onready var fishing_rod = self.find_parent("Fishing Rod")
 @onready var reeled_marker = fishing_rod.find_child("Fishing Hook Reeled Marker")
-var hook_to_centre = Vector2.ZERO
-
 @onready var hook_sprite = $"Hook Sprite"
 @onready var hook_current_marker = $"Hook Sprite/Fishing Hook Current Mark"
 @onready var test_line = $Line2D
