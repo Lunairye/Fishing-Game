@@ -6,7 +6,7 @@ var power_max = 25
 var power_scale_amount = 5
 var power_scale_speed = 1
 
-var charging = true
+var charging = false
 var charge_timer = 0.0
 var reeling = false
 

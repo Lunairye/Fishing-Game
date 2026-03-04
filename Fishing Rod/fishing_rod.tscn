@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjwoheegicodq" path="res://Art Assets/Fishing Equipment/Fishing Rod Equipment/Fishing Hook.png" id="1_3y1ma"]
 [ext_resource type="Texture2D" uid="uid://dmht8b3wc8xvv" path="res://Art Assets/Fishing Equipment/Fishing Rod Equipment/Fishing Rod.png" id="1_x0c03"]
 [ext_resource type="Script" uid="uid://5o20m34616ft" path="res://Fishing Rod/fishing_hook_manager.gd" id="3_pyqmv"]
+[ext_resource type="Script" uid="uid://dch07righ1e2g" path="res://Fishing Rod/hook_detection_manager.gd" id="4_m56ih"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52v63"]
 radius = 2.5
@@ -29,6 +30,8 @@ shape = SubResource("CircleShape2D_52v63")
 
 [node name="Collection Zone" type="Area2D" parent="Fishing Hook" unique_id=1006105428]
 position = Vector2(0, 3)
+collision_mask = 3
+script = ExtResource("4_m56ih")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fishing Hook/Collection Zone" unique_id=1279664797]
 shape = SubResource("CircleShape2D_3y1ma")
@@ -56,3 +59,5 @@ width = 1.0
 
 [node name="Fishing Hook Reeled Marker" type="Marker2D" parent="." unique_id=1177002397]
 position = Vector2(6.5, -8)
+
+[connection signal="body_entered" from="Fishing Hook/Collection Zone" to="Fishing Hook/Collection Zone" method="_on_body_entered"]

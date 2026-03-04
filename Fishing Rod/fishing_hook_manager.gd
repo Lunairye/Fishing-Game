@@ -24,8 +24,11 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	### Testing Stuff
+	_reel()
+	_state_machine()
 	
+
+func _reel():
 	if fishing_rod.reeling:
 		freeze = true
 		global_position += -hook_to_centre.normalized() * fishing_rod.reel_force 
@@ -37,20 +40,19 @@ func _physics_process(delta: float) -> void:
 			freeze = false
 	else:
 		freeze = false 
-	
-	### State Machine
-	if hook_state == reeled:
-		gravity_scale = 0
-	else:
-		gravity_scale = 1
-	
-	if hook_state == sinking:
-		print("sinking")
-	
-	if hook_state == thrown or hook_state == sinking:
-		hook_sprite.rotation = to_local(hook_current_marker.global_position + linear_velocity).angle() - PI/2 
-	else:
-		hook_sprite.rotation = 0
+
+func _state_machine():
+	match hook_state:
+		reeled:
+			gravity_scale = 0
+			hook_sprite.rotation = 0
+		thrown:
+			gravity_scale = 1
+			hook_sprite.rotation = to_local(hook_current_marker.global_position + linear_velocity).angle() - PI/2 
+		sinking:
+			gravity_scale = 1
+			hook_sprite.rotation = to_local(hook_current_marker.global_position + linear_velocity).angle() - PI/2 
+
 
 func _launch(power: int) -> void:
 	launch_vector.x = cos(launch_angle)

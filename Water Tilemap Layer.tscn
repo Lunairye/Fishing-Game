@@ -1,0 +1,18 @@
+[gd_scene format=4 uid="uid://bsw4c27q7i7jd"]
+
+[ext_resource type="Texture2D" uid="uid://c127rx4kp5mpa" path="res://Art Assets/Water_1.png" id="1_qnedl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uva55"]
+texture = ExtResource("1_qnedl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+
+[sub_resource type="TileSet" id="TileSet_cpkp3"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_uva55")
+
+[node name="Water Tileset" type="TileMapLayer" unique_id=33347920 groups=["Water"]]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_cpkp3")

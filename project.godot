@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Fishing Game"
 run/main_scene="uid://bai4tjcy5qvpb"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Art Assets/Player/icon.svg"
 
 [dotnet]
 

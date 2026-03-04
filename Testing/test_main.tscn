@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://7fpx6gswghoa"]
+[gd_scene format=3 uid="uid://bai4tjcy5qvpb"]
 
-[node name="Test_Main" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://bqjvikyltyl1d" path="res://Fishing Rod/fishing_rod.tscn" id="1_fi8xf"]
+[ext_resource type="PackedScene" uid="uid://bsw4c27q7i7jd" path="res://Water Tilemap Layer.tscn" id="2_fi8xf"]
+
+[node name="Test_Main" type="Node2D" unique_id=1429241301]
+
+[node name="Fishing Rod" parent="." unique_id=1899286402 instance=ExtResource("1_fi8xf")]
+
+[node name="TileMapLayer" parent="." unique_id=33347920 instance=ExtResource("2_fi8xf")]
