@@ -58,6 +58,8 @@ func _reeling(delta: float) -> void:
 			reeling = true
 		if Input.is_action_just_released("Fish"):
 			reeling = false
+	if Input.is_action_just_released("Fish") and fishing_hook.hook_state == "reeled":
+			reeling = false
 	
 	if reeling and fishing_hook.hook_state != "reeled":
 		var direction = (fishing_hook_reeled_marker.global_position - fishing_hook.global_position)
